@@ -16,13 +16,30 @@ for (let i = 0; i < rows; i += 1) {
   grid.push(row);
 }
 
+// place items in map
+grid[10][10] = { itemType: 'plant' };
+grid[12][12] = { itemType: 'well' };
+for (let i = 14; i < 17; i += 1) {
+  grid[14][i] = { itemType: 'rock' };
+}
+
+// one pokecenter takes up more than one square - use fillers
+for (let i = 6; i < 8; i += 1) {
+  for (let j = 8; j < 11; j += 1) {
+    if (i === 6 && j === 8) {
+      grid[i][j] = { itemType: 'pokecenter' };
+    } else {
+      grid[i][j] = { itemType: 'filler' };
+    }
+  }
+}
+
 io.on('connection', (client) => {
   // initial info to send as soon as a new client connects to web socket
   client.emit('grid', grid);
   client.emit('newClientInfo', { rows, cols, clientId: client.id });
 
-  // list of clients currently connected to web socket
-  const clients = Object.keys(io.sockets.sockets);
+  // const clients = Object.keys(io.sockets.sockets); // list of connected clients
 
   client.on('addCharacter', (character) => { // find first available tile and place new client's character there
     for (let i = 0; i < rows; i += 1) {
@@ -45,10 +62,10 @@ io.on('connection', (client) => {
       if (!grid[endRow][endCol]) {
         grid[startRow][startCol] = null;
         grid[endRow][endCol] = character;
-        client.emit('characterCoords', { row: endRow, col: endCol });
+        client.emit('characterCoords', { row: endRow, col: endCol }); // send new character coords to client
       }
 
-      io.emit('grid', grid);
+      io.emit('grid', grid); // send new grid to all clients
     }
   });
 
@@ -56,7 +73,7 @@ io.on('connection', (client) => {
     console.log('message from client: ', data);
   });
 
-  client.on('disconnect', () => { // when client disconnects, remove their avatar from grid 
+  client.on('disconnect', () => { // when client disconnects, remove their character from grid
     for (let i = 0; i < rows; i += 1) {
       for (let j = 0; j < cols; j += 1) {
         if (grid[i][j]) {

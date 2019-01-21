@@ -28,7 +28,7 @@ class App extends Component {
       this.cols = cols;
       this.clientId = clientId;
       const character = {
-        characterType: 'character',
+        itemType: 'character',
         clientId: this.clientId,
         spritePos: [0, 0],
       };

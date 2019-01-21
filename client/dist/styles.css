@@ -7,8 +7,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 90vh;
-  width: 100%; */
   padding: 0px;
 }
 
@@ -17,18 +15,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* height: 100%;
-  width: 100%; */
 }
 
 .grid {
-  border: solid black 1px;
+  /* border: solid black 1px; */
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   align-items: stretch;
-  /* height: 100%;
-  width: 100%; */
   position: relative;
   border-radius: 5px;
 }
@@ -38,16 +32,16 @@ body {
 }
 
 .row {
-  border: solid black 1px;
+  /* border: solid black 1px; */
   display: flex;
   justify-content: stretch;
   align-items: stretch;
-  /* width: 100%;
-  height: 100%; */
 }
 
 .cell {
-  border: solid black 1px;
+  /* border: solid black 1px; */
+  background-image: url("https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/grass-tile.png");
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,3 +57,19 @@ body {
   transform-origin: top left;
 }
 
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemimg {
+  height: 100%;
+  width: 100%;
+}
+
+.pokecenter {
+  z-index: 1;
+  height: 200%;
+  width: 200%;
+}
