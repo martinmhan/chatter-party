@@ -17,8 +17,12 @@ for (let i = 0; i < rows; i += 1) {
 }
 
 // place items in map
-grid[10][10] = { itemType: 'plant' };
-grid[12][12] = { itemType: 'well' };
+grid[1][3] = { itemType: 'tree' };  
+grid[2][3] = { itemType: 'tree' };
+grid[3][3] = { itemType: 'tree' };
+grid[4][3] = { itemType: 'tree' };
+grid[5][3] = { itemType: 'tree' };
+
 for (let i = 14; i < 17; i += 1) {
   grid[14][i] = { itemType: 'rock' };
 }
