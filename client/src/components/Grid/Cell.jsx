@@ -1,7 +1,7 @@
 import React from 'react';
-import CharacterContainer from './CharacterContainer.jsx';
-import Pokecenter from './Pokecenter.jsx';
-import Item from './Item.jsx';
+import CharacterContainer from '../MapObjects/CharacterContainer.jsx';
+import Pokecenter from '../MapObjects/Pokecenter.jsx';
+import Item from '../MapObjects/Item.jsx';
 
 const itemUrls = {
   tree: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/tree_tile1.png',

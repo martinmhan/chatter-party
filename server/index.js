@@ -13,8 +13,8 @@ const grid = [
   [null, null, 'tr', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
   [null, null, 'tr', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
   [null, null, 'tr', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, 'pc', 'fi', 'fi', null, null, null, null, null, null, null, null, null, null, null, null],
-  [null, null, null, null, null, 'fi', 'fi', 'fi', null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, 'pc', 'fi', 'fi', null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, 'fi', 'fi', 'fi', null, null, null, null, null, null, null, null, null, null, null],
   [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
   [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
   [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
@@ -28,7 +28,6 @@ const grid = [
 
 const rows = grid.length;
 const cols = grid[0].length;
-
 const map = {
   tr: 'tree',
   pc: 'pokecenter',

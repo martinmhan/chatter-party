@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
-import Grid from './Grid.jsx';
+import Grid from './Grid/Grid.jsx';
 
 class App extends Component {
   constructor() {
