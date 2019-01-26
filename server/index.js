@@ -7,39 +7,44 @@ const PORT = 3000;
 const server = http.createServer(app);
 const io = socketIo(server);
 
-const rows = 16;
-const cols = 20;
-const grid = [];
-for (let i = 0; i < rows; i += 1) {
-  const row = [];
-  for (let j = 0; j < cols; j += 1) { row.push(null); }
-  grid.push(row);
-}
+const grid = [
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, 'tr', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, 'tr', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, 'tr', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, 'tr', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, 'pc', 'fi', 'fi', null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, 'fi', 'fi', 'fi', null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'ro', 'ro', 'ro', null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'ro', 'ro', 'ro', null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+];
 
-// place items in map
-grid[1][3] = { itemType: 'tree' };  
-grid[2][3] = { itemType: 'tree' };
-grid[3][3] = { itemType: 'tree' };
-grid[4][3] = { itemType: 'tree' };
-grid[5][3] = { itemType: 'tree' };
+const rows = grid.length;
+const cols = grid[0].length;
 
-for (let i = 14; i < 17; i += 1) {
-  grid[14][i] = { itemType: 'rock' };
-}
+const map = {
+  tr: 'tree',
+  pc: 'pokecenter',
+  fi: 'filler',
+  ro: 'rock',
+};
 
-// one pokecenter takes up more than one square - use fillers
-for (let i = 6; i < 8; i += 1) {
-  for (let j = 8; j < 11; j += 1) {
-    if (i === 6 && j === 8) {
-      grid[i][j] = { itemType: 'pokecenter' };
-    } else {
-      grid[i][j] = { itemType: 'filler' };
+for (let i = 0; i < grid.length; i += 1) {
+  for (let j = 0; j < grid[i].length; j += 1) {
+    if (grid[i][j] !== null) {
+      grid[i][j] = { itemType: map[grid[i][j]] };
     }
   }
 }
 
 io.on('connection', (client) => {
-  // initial info to send as soon as a new client connects to web socket
   client.emit('grid', grid);
   client.emit('newClientInfo', { rows, cols, clientId: client.id });
 
@@ -69,7 +74,7 @@ io.on('connection', (client) => {
         client.emit('characterCoords', { row: endRow, col: endCol }); // send new character coords to client
       }
 
-      io.emit('grid', grid); // send new grid to all clients
+      io.emit('grid', grid); // send updated grid to all clients
     }
   });
 

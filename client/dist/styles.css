@@ -18,7 +18,6 @@ body {
 }
 
 .grid {
-  /* border: solid black 1px; */
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -32,14 +31,12 @@ body {
 }
 
 .row {
-  /* border: solid black 1px; */
   display: flex;
   justify-content: stretch;
   align-items: stretch;
 }
 
 .cell {
-  /* border: solid black 1px; */
   background-image: url("https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/grass-tile.png");
   background-size: cover;
   display: flex;

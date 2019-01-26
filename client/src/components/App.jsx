@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.socket = io('http://3.83.40.199:3000');
+    this.socket = io('localhost:3000');
 
     this.socket.on('connect', () => {
       console.log('Connected to websocket server');
