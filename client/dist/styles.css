@@ -70,3 +70,12 @@ body {
   height: 200%;
   width: 200%;
 }
+
+.chatcontainer {
+  height:100%;
+}
+
+.chatbox {
+  border: solid black 1px;
+  height: auto;
+}

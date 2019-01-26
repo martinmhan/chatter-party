@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
 import Grid from './Grid/Grid.jsx';
+import Chatbox from './Chat/Chatbox.jsx';
 
 class App extends Component {
   constructor() {
@@ -13,6 +14,7 @@ class App extends Component {
       grid: null,
       currRow: null,
       currCol: null,
+      chats: [],
     };
   }
 
@@ -95,18 +97,19 @@ class App extends Component {
     });
   };
 
-  render() {
-    return (
-      <div id="app">
-        <div id="gamecontainer">
-          <Grid
-            grid={this.state.grid}
-            handleKeyDown={this.handleKeyDown}
-          />
-        </div>
+  render = () => (
+    <div id="app">
+      <div id="gamecontainer">
+        <Grid
+          grid={this.state.grid}
+          handleKeyDown={this.handleKeyDown}
+        />
       </div>
-    );
-  };
+      <div className="chatcontainer">
+        <Chatbox chats={this.state.chats} />
+      </div>
+    </div>
+  );
 }
 
 export default App;

@@ -7,7 +7,7 @@ const PORT = 3000;
 const server = http.createServer(app);
 const io = socketIo(server);
 
-const grid = [
+const main = [
   [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
   [null, null, 'tr', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
   [null, null, 'tr', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
@@ -26,8 +26,27 @@ const grid = [
   [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
 ];
 
-const rows = grid.length;
-const cols = grid[0].length;
+const pokecenter = [
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, 'tr', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, 'tr', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, 'tr', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, 'tr', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, 'pc', 'fi', 'fi', null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, 'fi', 'fi', 'fi', null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'ro', 'ro', 'ro', null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'ro', 'ro', 'ro', null, null, null],
+  [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+];
+
+const rows = main.length;
+const cols = main[0].length;
 const map = {
   tr: 'tree',
   pc: 'pokecenter',
@@ -35,16 +54,18 @@ const map = {
   ro: 'rock',
 };
 
-for (let i = 0; i < grid.length; i += 1) {
-  for (let j = 0; j < grid[i].length; j += 1) {
-    if (grid[i][j] !== null) {
-      grid[i][j] = { itemType: map[grid[i][j]] };
+for (let i = 0; i < main.length; i += 1) {
+  for (let j = 0; j < main[i].length; j += 1) {
+    if (main[i][j] !== null) {
+      main[i][j] = { itemType: map[main[i][j]] };
     }
   }
 }
 
 io.on('connection', (client) => {
-  client.emit('grid', grid);
+  // identify client's current room and set to room
+  const room = main;
+  client.emit('grid', room);
   client.emit('newClientInfo', { rows, cols, clientId: client.id });
 
   // const clients = Object.keys(io.sockets.sockets); // list of connected clients
@@ -52,10 +73,10 @@ io.on('connection', (client) => {
   client.on('addCharacter', (character) => { // find first available tile and place new client's character there
     for (let i = 0; i < rows; i += 1) {
       for (let j = 0; j < cols; j += 1) {
-        if (!grid[i][j]) {
-          grid[i][j] = character;
+        if (!room[i][j]) {
+          room[i][j] = character;
           client.emit('characterCoords', { row: i, col: j });
-          io.emit('grid', grid);
+          io.emit('grid', room);
           return;
         }
       }
@@ -63,17 +84,17 @@ io.on('connection', (client) => {
   });
 
   client.on('moveCharacter', ({ startRow, startCol, endRow, endCol, endSpritePos }) => {
-    const character = grid[startRow][startCol];
+    const character = room[startRow][startCol];
     if (character) { // websocket was occasionally crashing - hedge with this condition
       character.spritePos = endSpritePos;
 
-      if (!grid[endRow][endCol]) {
-        grid[startRow][startCol] = null;
-        grid[endRow][endCol] = character;
+      if (!room[endRow][endCol]) {
+        room[startRow][startCol] = null;
+        room[endRow][endCol] = character;
         client.emit('characterCoords', { row: endRow, col: endCol }); // send new character coords to client
       }
 
-      io.emit('grid', grid); // send updated grid to all clients
+      io.emit('grid', room); // send updated grid to all clients
     }
   });
 
@@ -84,10 +105,10 @@ io.on('connection', (client) => {
   client.on('disconnect', () => { // when client disconnects, remove their character from grid
     for (let i = 0; i < rows; i += 1) {
       for (let j = 0; j < cols; j += 1) {
-        if (grid[i][j]) {
-          if (grid[i][j].clientId === client.id) {
-            grid[i][j] = null;
-            io.emit('grid', grid);
+        if (room[i][j]) {
+          if (room[i][j].clientId === client.id) {
+            room[i][j] = null;
+            io.emit('grid', room);
             return;
           }
         }
