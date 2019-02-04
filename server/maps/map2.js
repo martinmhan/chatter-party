@@ -2,22 +2,22 @@ const { itemsMap } = require('./itemsMap');
 
 const map2 = [
   ['bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo'],
-  ['bo', 't1', 't1', null, null, 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 'bo'],
+  ['bo', 't1', 't1', 't1', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 'bo'],
   ['bo', 't1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 't2', 'bo'],
   ['bo', 't1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 't2', 'bo'],
-  ['bo', 't1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'e3'],
-  ['bo', 't1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'e3'],
-  ['bo', 't1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'ro', 'bo'],
-  ['bo', 't1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'ro', 'bo'],
-  ['bo', 't1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'ro', 'bo'],
-  ['bo', 't1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'ro', 'bo'],
+  ['e1', null, null, null, null, null, null, 'ro', 'ro', 'ro', null, null, null, null, null, null, null, 't2', 'bo'],
+  ['e1', null, null, null, null, null, null, null, null, 'ro', null, null, null, null, null, null, null, 't2', 'bo'],
+  ['bo', 't1', null, null, null, null, null, null, null, 'ro', null, null, null, null, null, null, null, 'ro', 'bo'],
+  ['bo', 't1', null, null, null, null, null, null, 'ro', null, null, null, null, null, null, null, null, 'ro', 'bo'],
+  ['bo', 't1', null, null, null, null, null, 'ro', null, null, null, null, null, null, null, null, null, 'ro', 'bo'],
+  ['bo', 't1', null, null, null, null, null, 'ro', 'ro', 'ro', null, null, null, null, null, null, null, 'ro', 'bo'],
   ['bo', 't1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'ro', 'bo'],
   ['bo', 't1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'ro', 'ro', 'bo'],
   ['bo', 't1', null, null, null, null, null, null, null, null, null, null, null, null, null, 'ro', 'ro', 'ro', 'bo'],
   ['bo', 't1', 't1', null, null, null, null, null, null, null, null, null, null, null, 'ro', 'ro', 'ro', 'ro', 'bo'],
   ['bo', 't1', 't1', 't1', null, null, null, null, null, null, null, null, null, 't3', 't3', 't3', 't3', 't3', 'bo'],
-  ['bo', 't1', 't1', 't1', 't1', 't1', 't1', 't3', 't3', 't3', 't3', 't3', 't3', 't3', 't3', 't3', 't3', 't3', 'bo'],
-  ['bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo'],
+  ['bo', 't1', 't1', 't1', 't1', null, null, 't3', 't3', 't3', 't3', 't3', 't3', 't3', 't3', 't3', 't3', 't3', 'bo'],
+  ['bo', 'bo', 'bo', 'bo', 'bo', 'e4', 'e4', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo'],
 ];
 
 const map2Rows = map2.length;

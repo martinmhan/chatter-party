@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import Grid from './Grid/Grid.jsx';
 import Chatbox from './Chat/Chatbox.jsx';
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.socket = null;
@@ -102,5 +102,3 @@ class App extends Component {
     </div>
   );
 }
-
-export default App;

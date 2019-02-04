@@ -5,11 +5,11 @@ const map1 = [
   ['bo', 't1', 't1', 't1', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 't2', 'bo'],
   ['bo', 't1', null, null, 't2', 't2', 't2', 't2', null, null, null, null, null, null, null, null, null, 't2', 'bo'],
   ['bo', 't1', null, null, 't2', 't2', 't2', null, null, null, null, null, null, null, null, null, null, 't2', 'bo'],
-  ['bo', 't1', null, null, 't2', 't2', null, null, null, null, null, null, null, null, null, null, null, null, 'bo'],
-  ['bo', 't1', null, null, 't2', 't2', null, null, null, null, null, null, null, null, null, null, null, null, 'bo'],
-  ['bo', 't1', null, null, 't2', 't2', null, null, 'pc', 'fi', 'fi', null, null, null, null, null, null, 'ro', 'bo'],
-  ['bo', 't1', null, null, 't2', 't2', null, null, 'fi', 'pe', 'fi', null, null, null, null, null, null, 'ro', 'bo'],
-  ['bo', 't1', null, null, 't2', 't2', null, null, null, null, null, null, null, null, null, null, null, 'ro', 'bo'],
+  ['bo', 't1', null, null, 't2', 't2', null, null, null, null, null, null, null, 'ro', null, null, null, null, 'e2'],
+  ['bo', 't1', null, null, 't2', 't2', null, null, null, null, null, null, null, 'ro', null, null, null, null, 'e2'],
+  ['bo', 't1', null, null, 't2', 't2', null, null, 'pc', 'fi', 'fi', null, null, 'ro', null, null, null, 'ro', 'bo'],
+  ['bo', 't1', null, null, 't2', 't2', null, null, 'fi', 'fi', 'fi', null, null, 'ro', null, null, null, 'ro', 'bo'],
+  ['bo', 't1', null, null, 't2', 't2', null, null, null, null, null, null, null, 'ro', null, null, null, 'ro', 'bo'],
   ['bo', 't1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'ro', 'bo'],
   ['bo', 't1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'ro', 'bo'],
   ['bo', 't1', null, null, null, null, null, null, null, null, null, null, null, null, null, null, 'ro', 'ro', 'bo'],
@@ -17,7 +17,7 @@ const map1 = [
   ['bo', 't1', 't1', null, null, null, null, null, null, null, null, null, null, null, 'ro', 'ro', 'ro', 'ro', 'bo'],
   ['bo', 't1', 't1', 't1', null, null, null, null, null, null, null, null, null, 't3', 't3', 't3', 't3', 't3', 'bo'],
   ['bo', 't1', 't1', 't1', 't1', null, null, 't3', 't3', 't3', 't3', 't3', 't3', 't3', 't3', 't3', 't3', 't3', 'bo'],
-  ['bo', 'bo', 'bo', 'bo', 'bo', 'e2', 'e2', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo'],
+  ['bo', 'bo', 'bo', 'bo', 'bo', 'e3', 'e3', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo', 'bo'],
 ];
 
 const map1Rows = map1.length;

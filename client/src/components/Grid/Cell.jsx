@@ -10,6 +10,7 @@ const itemUrls = {
   plant1: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/plant_tile1.png',
   plant2: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/plant_tile2.png',
   rock: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/rock_tile.png',
+  pokecenter: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/pokecenter_tile.png', 
 };
 
 const Cell = (props) => {
@@ -25,7 +26,7 @@ const Cell = (props) => {
   return (
     <div className={classNames.join(' ')}>
       { props.cell ?
-          itemUrls[props.cell.itemType] ? <Item url={itemUrls[props.cell.itemType]} rowIndex={props.rowIndex} /> :
+          itemUrls[props.cell.itemType] ? <Item url={itemUrls[props.cell.itemType]} rowIndex={props.rowIndex} itemType={props.cell.itemType} /> :
           props.cell.itemType === 'character' ? <CharacterContainer cell={props.cell} /> :
           props.cell.itemType === 'pokecenter' ? <Pokecenter /> : null
         : null }
