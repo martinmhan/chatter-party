@@ -1,0 +1,84 @@
+body {
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  margin: 0px;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+#gamecontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  position: relative;
+  border-radius: 5px;
+}
+
+.grid:focus {
+  outline: none;
+}
+
+.row {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.cell {
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+.pokecenter {
+  z-index: 1;
+  height: 200%;
+  width: 200%;
+}
+
+.grass {
+  background-image: url("https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/grass-tile.png");
+}
+
+.charactercontainer {
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  transform-origin: top left;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemimg {
+  height: 100%;
+  width: 100%;
+}
+
+.chatcontainer {
+  height:100%;
+}
+
+.chatbox {
+  border: solid black 1px;
+  height: auto;
+}
