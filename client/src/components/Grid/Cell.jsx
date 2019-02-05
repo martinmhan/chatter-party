@@ -1,6 +1,5 @@
 import React from 'react';
 import CharacterContainer from '../MapObjects/CharacterContainer.jsx';
-import Pokecenter from '../MapObjects/Pokecenter.jsx';
 import Item from '../MapObjects/Item.jsx';
 
 const itemUrls = {
@@ -26,10 +25,12 @@ const Cell = (props) => {
   return (
     <div className={classNames.join(' ')}>
       { props.cell ?
-          itemUrls[props.cell.itemType] ? <Item url={itemUrls[props.cell.itemType]} rowIndex={props.rowIndex} itemType={props.cell.itemType} /> :
-          props.cell.itemType === 'character' ? <CharacterContainer cell={props.cell} /> :
-          props.cell.itemType === 'pokecenter' ? <Pokecenter /> : null
-        : null }
+          itemUrls[props.cell.itemType]
+            ? <Item url={itemUrls[props.cell.itemType]} rowIndex={props.rowIndex} itemType={props.cell.itemType} />
+            : props.cell.itemType === 'character' ? <CharacterContainer cell={props.cell} />
+          : null
+        : null
+      }
     </div>
   );
 };
