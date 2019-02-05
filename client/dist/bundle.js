@@ -86,12 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-<<<<<<< HEAD
-/***/ "./client/src/index.jsx":
-/*!******************************!*\
-  !*** ./client/src/index.jsx ***!
-  \******************************/
-=======
 /***/ "./client/src/components/App.jsx":
 /*!***************************************!*\
   !*** ./client/src/components/App.jsx ***!
@@ -188,28 +182,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ "./client/src/components/MapObjects/Pokecenter.jsx":
-/*!*********************************************************!*\
-  !*** ./client/src/components/MapObjects/Pokecenter.jsx ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nError: ENOENT: no such file or directory, open '/Users/martinhan/Desktop/chatter-party-v0/client/src/components/MapObjects/Pokecenter.jsx'\");\n\n//# sourceURL=webpack:///./client/src/components/MapObjects/Pokecenter.jsx?");
-
-/***/ }),
-
-<<<<<<< HEAD
-/***/ "./client/src/index.js":
-/*!*****************************!*\
-  !*** ./client/src/index.js ***!
-  \*****************************/
->>>>>>> Update bundle
-/*! no exports provided */
-=======
-=======
->>>>>>> [refactor] remove unused Pokecenter component
 /***/ "./client/src/index.jsx":
 /*!******************************!*\
   !*** ./client/src/index.jsx ***!
@@ -934,10 +906,9 @@ eval("\n\nvar alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqr
   !*** ws (ignored) ***!
   \********************/
 /*! no static exports found */
->>>>>>> [prog, refactor] Modularize maps, progress on room switches
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nError: ENOENT: no such file or directory, open '/Users/martinhan/Desktop/chatter-party-v0/client/src/index.jsx'\");\n\n//# sourceURL=webpack:///./client/src/index.jsx?");
+eval("/* (ignored) */\n\n//# sourceURL=webpack:///ws_(ignored)?");
 
 /***/ })
 
