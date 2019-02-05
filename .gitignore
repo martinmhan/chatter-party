@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 node_modules
+<<<<<<< HEAD
 bundle.js
 =======
 # Logs
@@ -70,3 +71,6 @@ node_modules
 
 bundle.js
 >>>>>>> [doc] Edit readme, add bundle to gitignore
+=======
+client/dist/bundle.js
+>>>>>>> [update gitignore]
