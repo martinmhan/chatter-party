@@ -37,7 +37,6 @@ body {
 }
 
 .cell {
-  background-image: url("https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/grass-tile.png");
   background-size: cover;
   display: flex;
   align-items: center;
@@ -45,6 +44,14 @@ body {
   width: 100%;
   width: 40px;
   height: 40px;
+}
+
+.grass {
+  background-image: url("https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/grass-tile.png");
+}
+
+.border .entrance1 .entrance2 {
+  background-image: none;
 }
 
 .charactercontainer {

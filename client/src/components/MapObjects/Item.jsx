@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Plant = (props) => (
+const Item = (props) => (
   <div className="item">
     <img className="itemimg" src={props.url} />
   </div>
 );
 
-export default Plant;
+export default Item;
