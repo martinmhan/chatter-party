@@ -13,7 +13,6 @@ const itemsMap = {
   e2: 'entrance to map2',
   e3: 'entrance to map3',
   e4: 'entrance to map4',
-  h1: 'house1',
 };
 
 module.exports = { itemsMap };

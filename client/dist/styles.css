@@ -46,21 +46,8 @@ body {
   height: 40px;
 }
 
-.pokecenter {
-  z-index: 1;
-  height: 200%;
-  width: 200%;
-}
-
 .grass {
   background-image: url("https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/grass-tile.png");
-}
-
-.charactercontainer {
-  overflow: hidden;
-  width: 40px;
-  height: 40px;
-  transform-origin: top left;
 }
 
 .item {
@@ -72,6 +59,25 @@ body {
 .itemimg {
   height: 100%;
   width: 100%;
+}
+
+.pokecenter {
+  z-index: 1;
+  height: 200%;
+  width: 200%;
+}
+
+.house1 {
+  z-index: 1;
+  height: 200%;
+  width: 200%;
+}
+
+.charactercontainer {
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  transform-origin: top left;
 }
 
 .chatcontainer {

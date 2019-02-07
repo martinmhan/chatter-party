@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Item = (props) => {
-  const divClassName = props.itemType === 'pokecenter'
-    ? 'pokecenter'
-    : 'item';
+// list map objects larger than one square here
+const divClassNames = {
+  pokecenter: 'pokecenter',
+  house1: 'house1',
+};
 
-  const imgClassName = props.itemType === 'pokecenter'
-    ? null
-    : 'itemimg';
+const Item = (props) => {
+  const divClassName = divClassNames[props.itemType] || 'item';
+  const imgClassName = divClassNames[props.itemType] ? null : 'itemimg';
 
   return (
     <div className={divClassName}>

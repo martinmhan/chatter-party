@@ -9,7 +9,8 @@ const itemUrls = {
   plant1: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/plant_tile1.png',
   plant2: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/plant_tile2.png',
   rock: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/rock_tile.png',
-  pokecenter: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/pokecenter_tile.png', 
+  pokecenter: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/pokecenter_tile.png',
+  house1: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/house_tile1.png',
 };
 
 const Cell = (props) => {
