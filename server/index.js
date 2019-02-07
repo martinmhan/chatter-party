@@ -5,6 +5,7 @@ const { map1, map1Rows, map1Cols } = require('./maps/map1');
 const { map2 } = require('./maps/map2');
 const { map3 } = require('./maps/map3');
 const { map4 } = require('./maps/map4');
+const { mapp } = require('./maps/mapp');
 const { startingCoords } = require('./maps/roomStartingCoordinates');
 
 const PORT = 3000;
@@ -12,7 +13,7 @@ const PORT = 3000;
 const server = http.createServer(app);
 const io = socketIo(server);
 
-const roomsMap = { map1, map2, map3, map4 };
+const roomsMap = { map1, map2, map3, map4, mapp };
 const rows = map1Rows;
 const cols = map1Cols;
 

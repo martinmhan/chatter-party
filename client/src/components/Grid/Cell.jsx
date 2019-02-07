@@ -8,27 +8,32 @@ const itemUrls = {
   tree3: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/tree_tile3.png',
   plant1: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/plant_tile1.png',
   plant2: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/plant_tile2.png',
+  plant3: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/plant_tile3.png',
+  plants: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/plants_tile.png',
+  cabinet1: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/cabinet_tile.png',
+  computer: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/computer_tile.png',
   rock: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/rock_tile.png',
+  sign: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/sign_tile1.png',
   pokecenter: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/pokecenter_tile.png',
   house1: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/house_tile1.png',
+  stump: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/stump_tile1.png',
 };
 
-const Cell = (props) => {
+const Cell = ({ cell, rowIndex, colIndex, room}) => {
   const classNames = ['cell'];
-  if (!props.cell) {
-    classNames.push('grass');
-  } else if (props.cell.itemType === 'border' || props.cell.itemType.slice(0, 8) === 'entrance') {
-    classNames.push(props.cell.itemType);
-  } else {
-    classNames.push('grass');
+  const background = room === 'mapp' ? 'pokecenterfloor' : 'grass'; 
+
+  if (!cell) { classNames.push(background); }
+  else if (cell.itemType !== 'border' && cell.itemType.slice(0, 8) !== 'entrance') {
+    classNames.push(background);
   }
 
   return (
     <div className={classNames.join(' ')}>
-      { props.cell ?
-          itemUrls[props.cell.itemType]
-            ? <Item url={itemUrls[props.cell.itemType]} rowIndex={props.rowIndex} itemType={props.cell.itemType} />
-            : props.cell.itemType === 'character' ? <CharacterContainer cell={props.cell} />
+      { cell ?
+          itemUrls[cell.itemType]
+            ? <Item url={itemUrls[cell.itemType]} rowIndex={rowIndex} itemType={cell.itemType} />
+            : cell.itemType === 'character' ? <CharacterContainer cell={cell} />
           : null
         : null
       }

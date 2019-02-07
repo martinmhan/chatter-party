@@ -50,6 +50,10 @@ body {
   background-image: url("https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/grass-tile.png");
 }
 
+.pokecenterfloor {
+  background-image: url("https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/pokecenter_background.png");
+}
+
 .item {
   display: flex;
   align-items: center;

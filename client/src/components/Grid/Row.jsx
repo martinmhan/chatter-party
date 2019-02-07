@@ -1,14 +1,15 @@
 import React from 'react';
 import Cell from './Cell.jsx';
 
-const Row = (props) => (
+const Row = ({ room, row, rowIndex}) => (
   <div className="row">
-    {props.row.map((cell, colIndex) => (
+    {row.map((cell, colIndex) => (
       <Cell
         cell={cell}
-        rowIndex={props.rowIndex}
+        rowIndex={rowIndex}
         colIndex={colIndex}
         key={colIndex}
+        room={room}
       />
     ))}
   </div>
