@@ -13,6 +13,7 @@ Third, a basic walking sprite animation was built with nothing but React. I used
 I used React, Socket.io, and sprites to build a simple Zelda-style MMORPG.
 
 # GIF DEMOS
+Two browser windows shown to demonstrate multiple clients
 - Real time multiplayer movement and walking animations: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/chatter_party_demo.gif
 - Rooms demo 1: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/chatter_party_rooms_demo.gif
 - Rooms demo 2: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/chatter_party_rooms_demo2.gif
