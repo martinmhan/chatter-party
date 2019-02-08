@@ -9,5 +9,10 @@ Secondly, a character can walk through entrances into a different section of the
 
 Third, a basic walking sprite animation was built with nothing but React. I used a larger image that contains every frame the character could possibly show throughout its walking motions and used a React state and CSS's overflow: hidden property to only show one frame of that image at a time. A resource that I found useful to help understand: https://medium.freecodecamp.org/learn-advanced-react-patterns-by-developing-a-game-with-sprite-animation-5dc072886975.
 
-#TL;DR
+# TL;DR
 I used React, Socket.io, and sprites to build a simple Zelda-style MMORPG.
+
+# GIF DEMOS
+- Real time multiplayer movement and walking animations: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/chatter_party_demo.gif
+- Rooms demo 1: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/chatter_party_rooms_demo.gif
+- Rooms demo 2: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/chatter_party_rooms_demo2.gif
