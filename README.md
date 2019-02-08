@@ -1,7 +1,7 @@
 # Description
 Multiplayer online game built using Socket.io
 
-This side project of mine is an example of a simple MMORPG built using React, web sockets, and sprites. Still a work in development, BUT a high level, it generates a Zelda-style grid where you control a character that can traverse around the screen and into other sections of the map. A few things I want to highlight...
+This side project (still a work in progress) is an example of a simple MMORPG built using React, web sockets, and sprites. At a high level, it generates a Zelda-style grid where you control a character that can traverse around the screen and into other sections of the map. A few things I want to highlight...
 
 First, the real-time character movements is achieved by storing one central grid (for each section of the map) in the socket server. Each grid is just an m x n matrix storing values that represent an image to display on the screen (e.g., a tree, rock, or character). When a user presses an arrow key, this sends a "moveCharacter" event to the web socket, which then updates the matrix then emits it out to every connected client, so that everyone sees the same screen at the same time. Some logic was also added on the front-end to prevent characters from walking into rocks or trees.
 
