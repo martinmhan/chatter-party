@@ -93,6 +93,7 @@ export class App extends Component {
       <div id="gamecontainer">
         <Grid
           grid={this.state.grid}
+          room={this.state.room}
           handleKeyDown={this.handleKeyDown}
         />
       </div>

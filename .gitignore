@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 node_modules
-<<<<<<< HEAD
 bundle.js
-=======
+
 # Logs
 logs
 *.log
@@ -65,12 +62,3 @@ typings/
 
 # next.js build output
 .next
->>>>>>> fc840f082d160d548856a9cae3f25ec7e81f8f7a
-=======
-node_modules
-
-bundle.js
->>>>>>> [doc] Edit readme, add bundle to gitignore
-=======
-client/dist/bundle.js
->>>>>>> [update gitignore]
