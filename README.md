@@ -9,9 +9,6 @@ Second, a character can walk through entrances to different sections of the map 
 
 Third, a basic walking sprite animation was built with nothing but React. I used a larger image containing every frame of the character's walking animation and used a React state and CSS's "overflow: hidden" property to only show one frame/snippet of that image at a time.
 
-# TL;DR
-I used React, Socket.io, and sprites to build a very simple Zelda-style MMORPG.
-
 # GIF DEMOS
 Two browser windows shown to demonstrate multiple clients
 - Real time multiplayer movement and walking animations: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/chatter_party_demo.gif
