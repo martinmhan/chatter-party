@@ -1,7 +1,7 @@
 # Description
 Multiplayer online game built using Socket.io
 
-This side project (still a work in progress) from my time at Hack Reactor is an example of a simple MMORPG built using React, web sockets, and sprites. Basically, you control a character that walks around a mini Zelda/Pokemon-style world. A few things to highlight:
+This side project (still a work in progress) is an example of a simple MMORPG built using React, web sockets, and sprites. Basically, you control a character that walks around a mini Zelda/Pokemon-style world. A few things to highlight:
 
 1) The real-time character movements is achieved by storing one central grid (for each section of the map) in the socket server. Each grid is just an m x n matrix storing values that represent an image to display on the screen (e.g., a tree, rock, or character). When a user presses an arrow key, this sends a "moveCharacter" event to the web socket, which then updates the matrix before emitting it out to every connected client. Some logic was also added on the front-end to prevent characters from walking into rocks or trees.
 
