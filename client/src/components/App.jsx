@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
 import Grid from './Grid/Grid.jsx';
+import ChatContainer from './Chatbox/ChatContainer.jsx';
+import UsernameModal from './UsernameModal.jsx';
 
 export class App extends Component {
   constructor() {
@@ -10,11 +12,14 @@ export class App extends Component {
     this.cols = null;
     this.clientId = null;
     this.state = {
+      gameState: 'usernameinput', // possible values: usernameinput, gameplay
+      username: null,
       grid: null,
       currRow: null,
       currCol: null,
       room: null,
-      chats: [],
+      currentMessage: '',
+      chatMessages: [],
     };
   }
 
@@ -27,12 +32,12 @@ export class App extends Component {
       this.rows = rows;
       this.cols = cols;
       this.clientId = clientId;
-      const character = {
-        itemType: 'character',
-        clientId: this.clientId,
-        spritePos: [0, 0],
-      };
-      this.socket.emit('addCharacter', character);
+      // const character = {
+      //   itemType: 'character',
+      //   clientId: this.clientId,
+      //   spritePos: [0, 0],
+      // };
+      // this.socket.emit('addCharacter', character);
       this.setState({ room });
     });
 
@@ -41,6 +46,10 @@ export class App extends Component {
     this.socket.on('characterCoords', ({ row, col }) => { this.setState({ currRow: row, currCol: col }); });
     this.socket.on('message', (data) => { console.log(data); });
     this.socket.on('disconnect', () => { console.log('Disconnected from socket'); });
+    this.socket.on('chatMessage', (newMessage) => {
+      const chatMessages = [...this.state.chatMessages, newMessage];
+      this.setState({ chatMessages });
+    });
   };
 
   handleKeyDown = (e) => {
@@ -87,13 +96,50 @@ export class App extends Component {
     });
   };
 
+  setUsername = (username) => {
+    this.setState({ username }, () => {
+      const character = {
+        itemType: 'character',
+        clientId: this.clientId,
+        username: this.state.username,
+        spritePos: [0, 0],
+      };
+      this.socket.emit('addCharacter', character);
+    });
+  }
+
+  updateGameState = (gameState) => {
+    this.setState({ gameState });
+  };
+
+  updateCurrentMessage = (currentMessage) => {
+    this.setState({ currentMessage });
+  };
+
+  sendChatMessage = () => {
+    this.socket.emit('chatMessage', { username: this.state.username, messageText: this.state.currentMessage });
+    document.getElementById('chatinput').value = '';
+  };
+
   render = () => (
     <div id="app">
+      {
+        this.state.gameState === 'usernameinput'
+        ? <UsernameModal setUsername={this.setUsername} updateGameState={this.updateGameState} />
+        : null
+      }
+      <h1>World of Walkcraft</h1>
       <div id="gamecontainer">
         <Grid
           grid={this.state.grid}
           room={this.state.room}
           handleKeyDown={this.handleKeyDown}
+        />
+        <ChatContainer
+          chatMessages={this.state.chatMessages}
+          updateCurrentMessage={this.updateCurrentMessage}
+          sendChatMessage={this.sendChatMessage}
+          currentMessage={this.state.currentMessage}
         />
       </div>
     </div>

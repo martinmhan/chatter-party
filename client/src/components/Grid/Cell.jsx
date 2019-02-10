@@ -19,7 +19,7 @@ const itemUrls = {
   stump: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/stump_tile1.png',
 };
 
-const Cell = ({ cell, rowIndex, colIndex, room}) => {
+const Cell = ({ cell, rowIndex, room}) => {
   const classNames = ['cell'];
   const background = room === 'mapp' ? 'pokecenterfloor' : 'grass'; 
 

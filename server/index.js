@@ -20,6 +20,7 @@ const cols = map1Cols;
 io.on('connection', (client) => {
   client.join('map1'); // clients initially start in the map1
   client.emit('newClientInfo', { room: 'map1', rows, cols, clientId: client.id });
+  client.emit('grid', map1);
 
   client.on('addCharacter', (character) => { // find first available tile and place new client's avatar
     for (let i = 0; i < rows; i += 1) {
@@ -67,6 +68,10 @@ io.on('connection', (client) => {
     }
 
     io.to(room).emit('grid', roomsMap[room]);
+  });
+
+  client.on('chatMessage', (chatMessage) => {
+    io.emit('chatMessage', chatMessage);
   });
 
   // when client disconnects, find character and remove from grid
