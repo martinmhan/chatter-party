@@ -9,8 +9,16 @@ This side project (still a work in progress) is an example of a simple MMORPG bu
 
 3) A basic walking sprite animation was built with nothing but React. I used a larger image containing every frame of the character's walking animation and used a React state and CSS's "overflow: hidden" property to only show one frame/snippet of that image at a time.
 
-# GIF DEMOS
+# GIF Demos
 Two browser windows shown to demonstrate multiple clients
 - Real time multiplayer movement and walking animations: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/chatter_party_demo.gif
 - Rooms demo 1: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/chatter_party_rooms_demo.gif
 - Rooms demo 2: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/chatter_party_rooms_demo2.gif
+
+# Setup
+Run the following, then open 'localhost:3000' in Chrome browser.
+```
+npm install
+npm run build
+npm start
+```
