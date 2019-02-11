@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
-import Grid from './Grid/Grid.jsx';
-import ChatContainer from './Chatbox/ChatContainer.jsx';
-import UsernameModal from './UsernameModal.jsx';
+import Grid from './Grid/Grid';
+import ChatContainer from './Chatbox/ChatContainer';
+import UsernameModal from './UsernameModal/UsernameModal';
 
 export class App extends Component {
   constructor() {
@@ -27,17 +27,10 @@ export class App extends Component {
     this.socket = io('localhost:3000');
 
     this.socket.on('connect', () => { console.log('Connected to websocket server'); });
-
     this.socket.on('newClientInfo', ({ room, rows, cols, clientId }) => {
       this.rows = rows;
       this.cols = cols;
       this.clientId = clientId;
-      // const character = {
-      //   itemType: 'character',
-      //   clientId: this.clientId,
-      //   spritePos: [0, 0],
-      // };
-      // this.socket.emit('addCharacter', character);
       this.setState({ room });
     });
 
