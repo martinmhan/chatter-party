@@ -11,9 +11,10 @@ This side project (still a work in progress) is an example of a simple MMORPG bu
 
 # GIF Demos
 Two browser windows shown to demonstrate multiple clients
-- Real time multiplayer movement and walking animations: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/chatter_party_demo.gif
-- Rooms demo 1: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/chatter_party_rooms_demo.gif
-- Rooms demo 2: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/chatter_party_rooms_demo2.gif
+- Player login + real-time multiplayer movements: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/wow_demo1.gif
+- Rooms demo 1: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/wow_demo2.gif
+- Rooms demo 2: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/wow_demo3.gif
+- Chat Feature: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/wow_demo4.gif
 
 # Setup
 Run the following, then open 'localhost:3000' in Chrome browser.
