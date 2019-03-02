@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    this.socket = io('localhost:4000');
+    this.socket = io('http://54.174.134.162:4000');
 
     this.socket.on('connect', () => { console.log('Connected to websocket server'); });
     this.socket.on('newClientInfo', ({ room, rows, cols, clientId }) => {
