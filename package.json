@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -w",
-    "start": "nodemon server/index.js"
+    "build:dev": "webpack -w --env.NODE_ENV=development --progress",
+    "build:prod": "webpack --env.NODE_ENV=production",
+    "start:dev": "nodemon server/index.js",
+    "start": "node server/index.js"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +33,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
+    "prop-types": "^15.7.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "socket.io": "^2.2.0",
