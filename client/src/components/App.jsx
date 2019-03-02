@@ -4,7 +4,7 @@ import Grid from './Grid/Grid';
 import ChatContainer from './Chatbox/ChatContainer';
 import UsernameModal from './UsernameModal/UsernameModal';
 
-export class App extends Component {
+class App extends Component {
   constructor() {
     super();
     this.socket = null;
@@ -55,7 +55,8 @@ export class App extends Component {
   moveCharacter = (directionKey) => {
     let character = this.state.grid[this.state.currRow][this.state.currCol];
     let endSpritePos = character.spritePos;
-    let endRow = this.state.currRow, endCol = this.state.currCol;
+    let endRow = this.state.currRow;
+    let endCol = this.state.currCol;
 
     if (directionKey === 'ArrowUp') {
       endRow = Math.max(0, endRow - 1);
@@ -118,8 +119,8 @@ export class App extends Component {
     <div id="app">
       {
         this.state.gameState === 'usernameinput'
-        ? <UsernameModal setUsername={this.setUsername} updateGameState={this.updateGameState} />
-        : null
+          ? <UsernameModal setUsername={this.setUsername} updateGameState={this.updateGameState} />
+          : null
       }
       <h1>World of Walkcraft</h1>
       <div id="gamecontainer">
@@ -138,3 +139,5 @@ export class App extends Component {
     </div>
   );
 }
+
+export default App;

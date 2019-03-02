@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import Character from './Character.jsx';
+import React from 'react';
+import PropTypes from 'prop-types';
+import Character from './Character';
 
 const CharacterContainer = ({ cell }) => (
   <div className="charactersupercontainer">
@@ -9,5 +10,9 @@ const CharacterContainer = ({ cell }) => (
     </div>
   </div>
 );
+
+CharacterContainer.propTypes = {
+  cell: PropTypes.objectOf(PropTypes.any).isRequired,
+};
 
 export default CharacterContainer;

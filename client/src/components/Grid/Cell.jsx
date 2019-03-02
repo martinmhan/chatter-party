@@ -1,6 +1,7 @@
 import React from 'react';
-import CharacterContainer from '../MapObjects/CharacterContainer.jsx';
-import Item from '../MapObjects/Item.jsx';
+import PropTypes from 'prop-types';
+import CharacterContainer from '../MapObjects/CharacterContainer';
+import Item from '../MapObjects/Item';
 
 const itemUrls = {
   tree1: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/tree_tile1.png',
@@ -19,7 +20,7 @@ const itemUrls = {
   stump: 'https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/stump_tile1.png',
 };
 
-const Cell = ({ cell, rowIndex, room}) => {
+const Cell = ({ cell, rowIndex, room }) => {
   const classNames = ['cell'];
   const background = room === 'mapp' ? 'pokecenterfloor' : 'grass'; 
 
@@ -30,15 +31,28 @@ const Cell = ({ cell, rowIndex, room}) => {
 
   return (
     <div className={classNames.join(' ')}>
-      { cell ?
-          itemUrls[cell.itemType]
-            ? <Item url={itemUrls[cell.itemType]} rowIndex={rowIndex} itemType={cell.itemType} />
-            : cell.itemType === 'character' ? <CharacterContainer cell={cell} />
-          : null
+      {
+        !cell ? null
+        : itemUrls[cell.itemType] ? <Item url={itemUrls[cell.itemType]} rowIndex={rowIndex} itemType={cell.itemType} />
+        : cell.itemType === 'character' ? <CharacterContainer cell={cell} />
         : null
       }
+
+      {/* { cell
+        ? itemUrls[cell.itemType]
+          ? <Item url={itemUrls[cell.itemType]} rowIndex={rowIndex} itemType={cell.itemType} />
+          : cell.itemType === 'character' ? <CharacterContainer cell={cell} />
+            : null
+        : null
+      } */}
     </div>
   );
+};
+
+Cell.propTypes = {
+  cell: PropTypes.objectOf(PropTypes.any).isRequired,
+  rowIndex: PropTypes.number.isRequired,
+  room: PropTypes.string.isRequired,
 };
 
 export default Cell;

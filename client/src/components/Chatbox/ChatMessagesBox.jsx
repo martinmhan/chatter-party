@@ -1,5 +1,6 @@
 import React from 'react';
-import ChatMessage from './ChatMessage.jsx';
+import PropTypes from 'prop-types';
+import ChatMessage from './ChatMessage';
 
 const ChatMessagesBox = ({ chatMessages }) => (
   <div className="chatmessagesbox">
@@ -8,5 +9,9 @@ const ChatMessagesBox = ({ chatMessages }) => (
     ))}
   </div>
 );
+
+ChatMessagesBox.propTypes = {
+  chatMessages: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default ChatMessagesBox;
