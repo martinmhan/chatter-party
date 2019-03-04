@@ -19,6 +19,7 @@ Two browser windows shown to demonstrate multiple clients
 
 # Setup
 ```
+git checkout local
 npm install
 npm run build:dev
 npm start:dev
