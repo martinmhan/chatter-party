@@ -8,7 +8,7 @@ const { map4 } = require('./maps/map4');
 const { mapp } = require('./maps/mapp');
 const { startingCoords } = require('./maps/roomStartingCoordinates');
 
-const PORT = 3000;
+const PORT = 4000;
 
 const server = http.createServer(app);
 const io = socketIo(server);
