@@ -1,3 +1,6 @@
+# Technical Stack
+- Development:  Express | Socket.io | React | Node.js
+
 # Description
 World of Walkcraft is an example of a simple MMORPG built using React, web sockets, and sprites. Basically, you control a character that walks around a mini Zelda/Pokemon-style world and send chats to other players. A few functionalities I want to highlight:
 
@@ -7,10 +10,7 @@ World of Walkcraft is an example of a simple MMORPG built using React, web socke
 
 3) Walking animation - This basic sprite animation was built using a sprite map (i.e., larger image containing every frame) of the character's walking animation, React state, and CSS's "overflow: hidden" property to only show one frame/snippet of that image at a time. (This pattern was found here - https://github.com/react-u/013-building-a-dungeon-crawler-game-pt-3).
 
-
-Technical Stack: Express | Socket.io | React | Node.js
-
-# GIF Demos
+# Demos
 Two browser windows shown to demonstrate multiple clients
 - Player login + real-time multiplayer movements: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/wow_demo1.gif
 - Rooms demo 1: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/wow_demo2.gif
@@ -19,7 +19,6 @@ Two browser windows shown to demonstrate multiple clients
 
 # Setup
 ```
-git checkout local
 npm install
 npm run build:dev
 npm start:dev
