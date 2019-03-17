@@ -12,10 +12,10 @@ World of Walkcraft is an example of a simple MMORPG built using React, web socke
 
 # Demos
 Two browser windows shown to demonstrate multiple clients
-- Player login + real-time multiplayer movements: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/wow_demo1.gif
-- Rooms demo 1: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/wow_demo2.gif
-- Rooms demo 2: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/wow_demo3.gif
-- Chat Feature: https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/wow_demo4.gif
+- <a href="https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/wow_demo1.gif">Player login + real-time multiplayer movements</a>
+- <a href="https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/wow_demo2.gif">Rooms demo 1</a>
+- <a href="https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/wow_demo3.gif">Rooms demo 2</a>
+- <a href="https://s3-us-west-1.amazonaws.com/gitbuckets/chatter-party/gifs/wow_demo4.gif">Chat Feature</a>
 
 # Setup
 ```
